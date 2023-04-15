@@ -6,8 +6,12 @@ import PropTypes from 'prop-types';
 // MUI
 import { Avatar, Box, Typography } from '@mui/material';
 
-const Profile: FC = (props: any): ReactElement => {
-  // destructure
+interface IProfile {
+  name: string;
+}
+
+const Profile: FC<IProfile> = (props): ReactElement => {
+  // destructure props
   const { name = 'John' } = props;
   return (
     <Box
@@ -41,5 +45,5 @@ const Profile: FC = (props: any): ReactElement => {
 export default Profile;
 
 Profile.propTypes = {
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
 };
