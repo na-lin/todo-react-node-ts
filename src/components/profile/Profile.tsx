@@ -1,9 +1,14 @@
 import React, { FC, ReactElement } from 'react';
 
+// React props types
+import PropTypes from 'prop-types';
+
 // MUI
 import { Avatar, Box, Typography } from '@mui/material';
 
-const Profile: FC = (): ReactElement => {
+const Profile: FC = (props: any): ReactElement => {
+  // destructure
+  const { name = 'John' } = props;
   return (
     <Box
       display="flex"
@@ -20,11 +25,11 @@ const Profile: FC = (): ReactElement => {
         }}
       >
         <Typography variant="h4" color="text.primary">
-          Na
+          {`${name.substring(0, 1)}`}
         </Typography>
       </Avatar>
       <Typography variant="h6" color="text.primary">
-        Welcome, Na
+        Welcome, {name}
       </Typography>
       <Typography variant="body1" color="text.primary">
         This is your personal task manager
@@ -34,3 +39,7 @@ const Profile: FC = (): ReactElement => {
 };
 
 export default Profile;
+
+Profile.propTypes = {
+  name: PropTypes.string,
+};
