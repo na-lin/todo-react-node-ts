@@ -4,13 +4,13 @@ export const customDarkTheme: ThemeOptions = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      light: 'rgba(168,85,247,.80)',
-      main: 'rgba(168,85,247,.65)',
-      dark: 'rgba(168,85,247,.28)',
+      light: '#bbf7d0',
+      main: '#22c55e',
+      dark: '#15803d',
     },
     background: {
-      paper: '#151515',
-      default: 'rgba(0,0,0,.96)',
+      paper: '#334155',
+      default: '#0f172a',
     },
   },
 });
