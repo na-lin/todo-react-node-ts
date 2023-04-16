@@ -4,7 +4,7 @@ import React, { FC, ReactElement } from 'react';
 import { TextField } from '@mui/material';
 
 // type safety
-import { ITextField } from './ITextField';
+import { ITextField } from './interfaces/ITextField';
 import PropTypes from 'prop-types';
 const TaskDescriptionField: FC<ITextField> = (
   props,

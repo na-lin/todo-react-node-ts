@@ -4,8 +4,8 @@ import React, { FC, ReactElement } from 'react';
 import { Box, Typography, Stack } from '@mui/material';
 
 // sub-components
-import TaskTitleField from './interfaces/TaskTitleField';
-import TaskDescriptionField from './interfaces/TaskDescriptionField';
+import TaskTitleField from './TaskTitleField';
+import TaskDescriptionField from './TaskDescriptionField';
 
 const CreateTaskForm: FC = (): ReactElement => {
   return (
