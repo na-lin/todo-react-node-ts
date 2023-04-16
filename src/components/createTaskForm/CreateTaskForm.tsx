@@ -1,7 +1,11 @@
 import React, { FC, ReactElement } from 'react';
 
 // MUI
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Stack } from '@mui/material';
+
+// sub-components
+import TaskTitleField from './interfaces/TaskTitleField';
+import TaskDescriptionField from './interfaces/TaskDescriptionField';
 
 const CreateTaskForm: FC = (): ReactElement => {
   return (
@@ -16,11 +20,17 @@ const CreateTaskForm: FC = (): ReactElement => {
       <Typography mb={2} component="h2" variant="h6">
         Create A Task
       </Typography>
-      {/* Task title */}
-      {/* Task description */}
-      {/* Task date */}
-      {/* Task Status  */}
-      {/* Task Priority  */}
+      <Stack
+        sx={{ width: '100%' }}
+        direction="column"
+        spacing={2}
+      >
+        <TaskTitleField />
+        <TaskDescriptionField />
+        {/* Task date */}
+        {/* Task Status  */}
+        {/* Task Priority  */}
+      </Stack>
     </Box>
   );
 };
