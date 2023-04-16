@@ -8,7 +8,22 @@ import _TaskHeader from './_TaskHeader';
 import _TaskBody from './_TaskBody';
 import _TaskFooter from './_TaskFooter';
 
-const Task: FC = (): ReactElement => {
+// types
+import { ITask } from './interfaces/ITask';
+import { Priority } from '../createTaskForm/enums/priority';
+import { Status } from '../createTaskForm/enums/status';
+
+const Task: FC<ITask> = (props): ReactElement => {
+  const {
+    priority = Priority.normal,
+    status = Status.completed,
+    title = 'Test Title',
+    date = new Date(),
+    description = 'Lorem ipsum dolor sit amet',
+    onStatusChange = (e) => console.log(e),
+    onClick = (e) => console.log(e),
+  } = props;
+
   return (
     <Box
       display="flex"
@@ -25,9 +40,12 @@ const Task: FC = (): ReactElement => {
         borderColor: 'error.light',
       }}
     >
-      <_TaskHeader />
-      <_TaskBody />
-      <_TaskFooter />
+      <_TaskHeader title={title} date={date} />
+      <_TaskBody description={description} />
+      <_TaskFooter
+        onStatusChange={onStatusChange}
+        onClick={onClick}
+      />
     </Box>
   );
 };
