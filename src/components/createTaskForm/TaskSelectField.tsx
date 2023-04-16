@@ -10,6 +10,7 @@ import {
 
 // type safety
 import { ISelectField } from './interfaces/ISelectField';
+import PropTypes from 'prop-types';
 const TaskSelectField: FC<ISelectField> = (
   props,
 ): ReactElement => {
@@ -51,3 +52,17 @@ const TaskSelectField: FC<ISelectField> = (
 };
 
 export default TaskSelectField;
+
+TaskSelectField.propTypes = {
+  name: PropTypes.string,
+  label: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+  disabled: PropTypes.bool,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string.isRequired,
+      lable: PropTypes.string.isRequired,
+    }).isRequired,
+  ),
+};
