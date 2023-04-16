@@ -3,7 +3,7 @@ import React, { FC, ReactElement, useState } from 'react';
 // MUI
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 
 // type safety
 import { IDateField } from './interfaces/IDateField';
@@ -14,15 +14,14 @@ const TaskDateField: FC<IDateField> = (
   // destucture props
   const {
     disabled = false,
-    value = new Date(),
+    value = null,
     onChange = (date) => console.log(date),
   } = props;
-  const [date, setDate] = useState<Date | null>(null);
 
   return (
     <>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DatePicker
+        <DesktopDatePicker
           label="Task Date"
           value={value}
           disabled={disabled}
