@@ -3,6 +3,9 @@ import React, { FC, ReactElement } from 'react';
 // MUI
 import { Box, Avatar, Typography } from '@mui/material';
 
+// helper
+import { emitCorrectBorderColor } from './helpers/emitCorrectBorderColor';
+
 // types
 import { ITaskCounter } from './interfaces/ITaskCounter';
 import { Status } from '../../createTaskForm/enums/status';
@@ -27,7 +30,9 @@ const TaskCounter: FC<ITaskCounter> = (
             width: '96px',
             height: '96px',
             marginBottom: '16px',
-            borderColor: 'warning.light',
+            borderColor: `${emitCorrectBorderColor(
+              status,
+            )}`,
           }}
         >
           <Typography color="#ffffff" variant="h4">
