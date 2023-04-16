@@ -5,6 +5,7 @@ import { Box } from '@mui/material';
 
 // sub-components
 import _TaskHeader from './_TaskHeader';
+import _TaskBody from './_TaskBody';
 
 const Task: FC = (): ReactElement => {
   return (
@@ -24,7 +25,7 @@ const Task: FC = (): ReactElement => {
       }}
     >
       <_TaskHeader />
-      {/* Body: task descript */}
+      <_TaskBody />
       {/* Footer:swith in-progress, mark as completed */}
     </Box>
   );
