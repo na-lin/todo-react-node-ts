@@ -8,6 +8,7 @@ import { format } from 'date-fns';
 
 // sub-components
 import TaskCounter from '../taskCounter/TaskCounter';
+import Task from '../task/Task';
 
 // types
 import { Status } from '../createTaskForm/enums/status';
@@ -57,9 +58,8 @@ const TaskArea: FC = (): ReactElement => {
           md={8}
           xs={10}
         >
-          <Box>Task Counter</Box>
-          <Box>Task will come over here</Box>
-          <Box>Task will come over here</Box>
+          <Task />
+          <Task />
         </Grid>
       </Grid>
     </Grid>
