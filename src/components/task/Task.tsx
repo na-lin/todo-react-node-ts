@@ -8,14 +8,17 @@ import _TaskHeader from './_TaskHeader';
 import _TaskBody from './_TaskBody';
 import _TaskFooter from './_TaskFooter';
 
+// helper
+import { renderPriorityBorderColor } from './helpers/renderPriorityBorderColor';
 // types
 import { ITask } from './interfaces/ITask';
+import PropTypes from 'prop-types';
 import { Priority } from '../createTaskForm/enums/priority';
 import { Status } from '../createTaskForm/enums/status';
 
 const Task: FC<ITask> = (props): ReactElement => {
   const {
-    priority = Priority.normal,
+    priority = Priority.high,
     status = Status.completed,
     title = 'Test Title',
     date = new Date(),
@@ -37,7 +40,9 @@ const Task: FC<ITask> = (props): ReactElement => {
         backgroundColor: 'background.paper',
         borderRadius: '8px',
         border: '1px solid',
-        borderColor: 'error.light',
+        borderColor: `${renderPriorityBorderColor(
+          priority,
+        )}`,
       }}
     >
       <_TaskHeader title={title} date={date} />
@@ -51,3 +56,14 @@ const Task: FC<ITask> = (props): ReactElement => {
 };
 
 export default Task;
+
+Task.propTypes = {
+  id: PropTypes.string,
+  priority: PropTypes.string,
+  status: PropTypes.string,
+  title: PropTypes.string,
+  date: PropTypes.instanceOf(Date),
+  description: PropTypes.string,
+  onStatusChange: PropTypes.func,
+  onClick: PropTypes.func,
+};
