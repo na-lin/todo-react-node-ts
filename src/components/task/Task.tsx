@@ -6,6 +6,7 @@ import { Box } from '@mui/material';
 // sub-components
 import _TaskHeader from './_TaskHeader';
 import _TaskBody from './_TaskBody';
+import _TaskFooter from './_TaskFooter';
 
 const Task: FC = (): ReactElement => {
   return (
@@ -14,8 +15,8 @@ const Task: FC = (): ReactElement => {
       flexDirection="column"
       justifyContent="flex-start"
       width="100%"
-      mb={2}
-      p={4}
+      mb={4}
+      p={2}
       sx={{
         width: '100%',
         backgroundColor: 'background.paper',
@@ -26,6 +27,7 @@ const Task: FC = (): ReactElement => {
     >
       <_TaskHeader />
       <_TaskBody />
+      <_TaskFooter />
       {/* Footer:swith in-progress, mark as completed */}
     </Box>
   );
