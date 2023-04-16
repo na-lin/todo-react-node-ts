@@ -3,6 +3,9 @@ import React, { FC, ReactElement } from 'react';
 // MUI
 import { Box } from '@mui/material';
 
+// sub-components
+import _TaskHeader from './_TaskHeader';
+
 const Task: FC = (): ReactElement => {
   return (
     <Box
@@ -20,7 +23,7 @@ const Task: FC = (): ReactElement => {
         borderColor: 'error.light',
       }}
     >
-      {/* Header: task title and date */}
+      <_TaskHeader />
       {/* Body: task descript */}
       {/* Footer:swith in-progress, mark as completed */}
     </Box>
