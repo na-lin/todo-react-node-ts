@@ -3,7 +3,15 @@ import React, { FC, ReactElement } from 'react';
 // MUI
 import { Box, Avatar, Typography } from '@mui/material';
 
-const TaskCounter: FC = (): ReactElement => {
+// types
+import { ITaskCounter } from './interfaces/ITaskCounter';
+import { Status } from '../../createTaskForm/enums/status';
+const TaskCounter: FC<ITaskCounter> = (
+  props,
+): ReactElement => {
+  // destructure props
+  const { count = 0, status = Status.todo } = props;
+
   return (
     <>
       <Box
@@ -23,7 +31,7 @@ const TaskCounter: FC = (): ReactElement => {
           }}
         >
           <Typography color="#ffffff" variant="h4">
-            10
+            {count}
           </Typography>
         </Avatar>
         <Typography
@@ -32,7 +40,7 @@ const TaskCounter: FC = (): ReactElement => {
           fontSize="20px"
           variant="h5"
         >
-          subtitle
+          {status}
         </Typography>
       </Box>
     </>
