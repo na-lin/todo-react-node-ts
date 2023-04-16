@@ -3,7 +3,19 @@ import React, { FC, ReactElement } from 'react';
 // MUI
 import { TextField } from '@mui/material';
 
-const TaskTitleField: FC = (): ReactElement => {
+// type safety
+import { ITextField } from './ITextField';
+import PropTypes from 'prop-types';
+
+const TaskTitleField: FC<ITextField> = (
+  props,
+): ReactElement => {
+  // destructure props
+  const {
+    disabled = false,
+    onChange = (e) => console.log(e),
+  } = props;
+
   return (
     <TextField
       id="title"
@@ -13,8 +25,15 @@ const TaskTitleField: FC = (): ReactElement => {
       size="small"
       name="title"
       fullWidth
+      disabled={disabled}
+      onChange={onChange}
     />
   );
 };
 
 export default TaskTitleField;
+
+TaskTitleField.propTypes = {
+  disabled: PropTypes.bool,
+  onChange: PropTypes.func,
+};
