@@ -24,7 +24,7 @@ const _TaskHeader: FC<ITaskHeader> = (
       display="flex"
       flexDirection="row"
       justifyContent="space-between"
-      mb={4}
+      mb={3}
     >
       <Box>
         <Typography variant="h6">{title}</Typography>
