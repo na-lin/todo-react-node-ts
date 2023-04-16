@@ -28,7 +28,6 @@ const Task: FC = (): ReactElement => {
       <_TaskHeader />
       <_TaskBody />
       <_TaskFooter />
-      {/* Footer:swith in-progress, mark as completed */}
     </Box>
   );
 };
