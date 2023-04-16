@@ -7,7 +7,7 @@ import { Grid, Box } from '@mui/material';
 import { format } from 'date-fns';
 
 // sub-components
-import TaskCounter from './taskCounter/TaskCounter';
+import TaskCounter from '../taskCounter/TaskCounter';
 
 // types
 import { Status } from '../createTaskForm/enums/status';

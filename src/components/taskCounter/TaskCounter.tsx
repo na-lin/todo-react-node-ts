@@ -9,7 +9,7 @@ import { emitCorrectLable } from './helpers/emitCorrectLabel';
 
 // types
 import { ITaskCounter } from './interfaces/ITaskCounter';
-import { Status } from '../../createTaskForm/enums/status';
+import { Status } from '../createTaskForm/enums/status';
 import PropTypes from 'prop-types';
 const TaskCounter: FC<ITaskCounter> = (
   props,
