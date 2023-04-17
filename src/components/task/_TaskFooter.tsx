@@ -31,7 +31,7 @@ const _TaskFooter: FC<ITaskFooter> = (
       <FormControlLabel
         control={
           <Switch
-            color="warning"
+            color="primary"
             onChange={(e) => onStatusChange(e)}
           />
         }
