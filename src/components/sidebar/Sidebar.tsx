@@ -25,7 +25,7 @@ const Sidebar: FC = (): ReactElement => {
         alignItems: 'center',
       }}
     >
-      <Profile name="Na" />
+      <Profile name="Jonas" />
       <CreateTaskForm />
     </Grid>
   );
