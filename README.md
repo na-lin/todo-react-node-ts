@@ -1,1 +1,5 @@
+# Integrate React with TypeScrip to build task management dashboard.
+
+### Overview of Dashboard
+
 <img src="public/dashboard.png" alt="application overview">
