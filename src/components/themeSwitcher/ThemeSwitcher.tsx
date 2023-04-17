@@ -4,7 +4,10 @@ import React, { FC, ReactElement } from 'react';
 import { FormControlLabel, Switch } from '@mui/material';
 
 // type
-import { IThemeSwitcher } from './interfaces/IThemeSwitcher';
+import {
+  IThemeSwitcher,
+  Mode,
+} from './interfaces/IThemeSwitcher';
 import PropTypes from 'prop-types';
 
 const ThemeSwitcher: FC<IThemeSwitcher> = (
@@ -12,7 +15,7 @@ const ThemeSwitcher: FC<IThemeSwitcher> = (
 ): ReactElement => {
   // destructure props
   const {
-    mode = 'light',
+    mode = Mode.dark,
     onChange = (e) => console.log(e.target.checked),
   } = props;
 
@@ -30,6 +33,6 @@ const ThemeSwitcher: FC<IThemeSwitcher> = (
 
 export default ThemeSwitcher;
 ThemeSwitcher.propTypes = {
-  mode: PropTypes.string,
+  mode: PropTypes.oneOf([Mode.light, Mode.dark]),
   onChange: PropTypes.func,
 };
