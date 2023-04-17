@@ -5,11 +5,12 @@ import Dashboard from './pages/dashboard/Dashboard';
 
 // MUI
 import { ThemeProvider, CssBaseline } from '@mui/material';
-import { customDarkTheme } from './theme/customTheme';
+import { customLightTheme } from './theme/customLightTheme';
+import { customDarkTheme } from './theme/customDarkTheme';
 
 const App: FC = (): ReactElement => {
   return (
-    <ThemeProvider theme={customDarkTheme}>
+    <ThemeProvider theme={customLightTheme}>
       <CssBaseline />
       <Dashboard />
     </ThemeProvider>
