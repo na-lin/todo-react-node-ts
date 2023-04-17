@@ -37,7 +37,7 @@ const TaskCounter: FC<ITaskCounter> = (
             )}`,
           }}
         >
-          <Typography color="black" variant="h4">
+          <Typography color="text.primary" variant="h4">
             {count}
           </Typography>
         </Avatar>
