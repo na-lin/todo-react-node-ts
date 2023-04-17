@@ -9,6 +9,7 @@ import { format } from 'date-fns';
 // sub-components
 import TaskCounter from '../taskCounter/TaskCounter';
 import Task from '../task/Task';
+import ThemeSwitcher from '../themeSwitcher/ThemeSwitcher';
 
 // types
 import { Status } from '../createTaskForm/enums/status';
@@ -21,6 +22,7 @@ const TaskArea: FC = (): ReactElement => {
           Status Of Your Tasks As On{' '}
           {format(new Date(), 'PPPP')}
         </h2>
+        <ThemeSwitcher />
       </Box>
 
       <Grid
