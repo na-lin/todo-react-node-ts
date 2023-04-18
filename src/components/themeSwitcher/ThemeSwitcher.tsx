@@ -16,15 +16,27 @@ const ThemeSwitcher: FC<IThemeSwitcher> = (
   // destructure props
   const {
     mode = Mode.dark,
-    onChange = (e) => console.log(e.target.checked),
+    onSwitchTheme = (mode) => console.log(mode),
   } = props;
+
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ): void => {
+    if (event.target.checked) {
+      // checked -> turn to dark mode
+      onSwitchTheme(Mode.dark);
+    } else {
+      // no checked -> turn to light mode
+      onSwitchTheme(Mode.light);
+    }
+  };
 
   return (
     <>
       <FormControlLabel
-        label={`switch to ${mode} mode`}
+        label={`Dark Mode`}
         control={
-          <Switch color="success" onChange={onChange} />
+          <Switch color="success" onChange={handleChange} />
         }
       />
     </>
@@ -34,5 +46,5 @@ const ThemeSwitcher: FC<IThemeSwitcher> = (
 export default ThemeSwitcher;
 ThemeSwitcher.propTypes = {
   mode: PropTypes.oneOf([Mode.light, Mode.dark]),
-  onChange: PropTypes.func,
+  onSwitchTheme: PropTypes.func,
 };
