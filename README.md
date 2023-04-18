@@ -2,10 +2,4 @@
 
 ## Overview of Dashboard
 
-### Light Mode
-
-<img src="public/dashboard-light.png" alt="application overview at light mode">
-
-### Dark Mode
-
-<img src="public/dashboard-dark.png" alt="application overview at dark mode">
+<img src="public/dashboard.gif" alt="application overview">
