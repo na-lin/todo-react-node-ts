@@ -13,8 +13,13 @@ import ThemeSwitcher from '../themeSwitcher/ThemeSwitcher';
 
 // types
 import { Status } from '../createTaskForm/enums/status';
+import { ITaskArea } from './interfaces/ITaskArea';
+import PropTypes from 'prop-types';
 
-const TaskArea: FC = (): ReactElement => {
+const TaskArea: FC<ITaskArea> = (props): ReactElement => {
+  const { onSwitchTheme = (mode) => console.log(mode) } =
+    props;
+
   return (
     <Grid item md={8} px={4}>
       <Box mb={8} px={4}>
@@ -22,7 +27,7 @@ const TaskArea: FC = (): ReactElement => {
           Status Of Your Tasks As On{' '}
           {format(new Date(), 'PPPP')}
         </h2>
-        <ThemeSwitcher />
+        <ThemeSwitcher onSwitchTheme={onSwitchTheme} />
       </Box>
 
       <Grid
@@ -69,3 +74,6 @@ const TaskArea: FC = (): ReactElement => {
 };
 
 export default TaskArea;
+TaskArea.propTypes = {
+  onSwitchTheme: PropTypes.func,
+};
